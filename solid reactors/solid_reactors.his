@@ -1,0 +1,446 @@
+
+
+
+                                     +
+                                   + + +
+                                   + + +
+                                   + + +
+                             +     + + +     +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                           + + +   + + +   + + +
+                     +     + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+           + + +   + + +   + + +   + + +   + + +   + + +   + + +
+             +     + + +   + + +   + + +   + + +   + + +     +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                   + + +   + + +   + + +   + + +   + + +
+                     +       +     + + +     +       +
+                                   + + +
+                                   + + +
+                                   + + +
+ ASPENTECH                         + + +
+                                   + + +
+ FLOWSHEET SIMULATION              + + +
+ FOR THE PROCESS INDUSTRIES        + + +
+                                     +
+
+
+                                                                        TM
+ AAAAA   SSSSS   PPPPP   EEEEE   NN    N   PPPPP   L       U   U   SSSSS
+ A   A   S       P   P   E       N N   N   P   P   L       U   U   S    
+ AAAAA   SSSSS   PPPPP   EEEEE   N   N N   PPPPP   L       U   U   SSSSS
+ A   A       S   P       E       N    NN   P       L       U   U       S
+ A   A   SSSSS   P       EEEEE   N     N   P       LLLLL   UUUUU   SSSSS
+
+ ASPEN PLUS IS A TRADEMARK OF           HOTLINE:
+ ASPEN TECHNOLOGY, INC.                 U.S.A. 888/996-7100
+ 200 WHEELER ROAD                       EUROPE (44) 1189-226555
+ BURLINGTON, MASSACHUSETTS 01803                             
+ 781/221-6400
+
+ PLATFORM: WINDOWS                                       APRIL 15, 2016      
+ VERSION: 28.0   Build 25                                FRIDAY      
+ INSTALLATION:                                           6:46:21 P.M.        
+
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+
+
+      ASPEN PLUS (R) IS A PROPRIETARY PRODUCT OF ASPEN TECHNOLOGY, INC.
+      (ASPENTECH), AND MAY BE USED ONLY UNDER AGREEMENT WITH ASPENTECH.
+      RESTRICTED RIGHTS LEGEND:  USE, REPRODUCTION, OR DISCLOSURE BY THE
+      U.S. GOVERNMENT IS SUBJECT TO RESTRICTIONS SET FORTH IN 
+      (i) FAR 52.227-14, Alt. III, (ii) FAR 52.227-19, (iii) DFARS 
+      252.227-7013(c)(1)(ii), or (iv) THE ACCOMPANYING LICENSE AGREEMENT,
+      AS APPLICABLE. FOR PURPOSES OF THE FAR, THIS SOFTWARE SHALL BE DEEMED
+      TO BE "UNPUBLISHED" AND LICENSED WITH DISCLOSURE PROHIBITIONS.
+      CONTRACTOR/SUBCONTRACTOR: ASPEN TECHNOLOGY, INC. 200 WHEELER ROAD,
+      BURLINGTON, MA 01803.
+ *** INPUT SUMMARY ***
+
+ >>CURRENT RUN
+
+   ORIGINAL RUN                           APRIL 15, 2016      
+   6:46:21 P.M.                           FRIDAY      
+   INPUT FILE: _3853mrr.inm
+   RUN ID : _3853mrr
+          1    ;
+          2    ;Input file created by Aspen Plus Rel. 28.0 at 18:46:20 Fri Apr 15, 2016
+          3    ;Directory C:\ProgramData\AspenTech\Aspen Plus V8.2  Runid _UNNAMED
+          4    ;
+          5
+          6
+          7
+          8    IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+          9            INVERSE-PRES='1/bar'
+         10
+         11    DEF-STREAMS MIXCISLD ALL
+         12
+         13    SIM-OPTIONS MASS-BAL-CHE=YES OLD-DATABANK=YES
+         14
+         15    DATABANKS PURE28  / AQUEOUS  / SOLIDS  / INORGANIC  /  &
+         16            NOASPENPCD
+         17
+         18    PROP-SOURCES PURE28  / AQUEOUS  / SOLIDS  / INORGANIC
+         19
+         20    COMPONENTS
+         21        CACO3 CACO3 /
+         22        CAO CAO /
+         23        C C /
+         24        CO2 CO2 /
+         25        O2 O2 /
+         26        N2 N2
+         27
+         28    CISOLID-COMPS CACO3 CAO C
+         29
+         30    SOLVE
+         31        RUN-MODE MODE=SIM
+         32
+         33    FLOWSHEET
+         34        BLOCK B1 IN=C CACO3 AIR OUT=4
+         35        BLOCK B2 IN=4 OUT=5 6
+         36
+         37    PROPERTIES PENG-ROB
+         38
+         39    PROP-DATA PRKBV-1
+         40        IN-UNITS MET PRESSURE=bar TEMPERATURE=C DELTA-T=C PDROP=bar  &
+         41            INVERSE-PRES='1/bar'
+         42        PROP-LIST PRKBV
+         43        BPVAL CO2 N2 -.0170000000 0.0 0.0 -273.1500000 726.8500000
+         44        BPVAL N2 CO2 -.0170000000 0.0 0.0 -273.1500000 726.8500000
+         45        BPVAL O2 N2 -.0119000000 0.0 0.0 -273.1500000 726.8500000
+         46        BPVAL N2 O2 -.0119000000 0.0 0.0 -273.1500000 726.8500000
+         47
+         48    STREAM AIR
+         49        SUBSTREAM MIXED TEMP=25. PRES=1. MOLE-FLOW=7.
+         50        MOLE-FRAC O2 0.21 / N2 0.79
+         51
+         52    STREAM C
+         53        SUBSTREAM CISOLID TEMP=20. PRES=1. MOLE-FLOW=1.2
+         54        MOLE-FLOW C 1.2
+         55
+         56    STREAM CACO3
+         57        SUBSTREAM CISOLID TEMP=20. PRES=1.
+         58        MOLE-FLOW CACO3 1.
+         59
+         60    BLOCK B2 FLASH2
+         61        PARAM TEMP=20. PRES=1.
+         62
+         63    BLOCK B1 RSTOIC
+         64        PARAM TEMP=850. PRES=1.
+         65        STOIC 1 CISOLID CACO3 -1. / CAO 1. / MIXED CO2 1.
+         66        STOIC 2 CISOLID C -1. / MIXED O2 -1. / CO2 1.
+         67        CONV 1 CISOLID CACO3 0.95
+         68        CONV 2 CISOLID C 1.
+         69
+         70    EO-CONV-OPTI
+         71
+         72    STREAM-REPOR MOLEFLOW
+         73    ;
+         74    ;
+         75    ;
+         76    ;
+         77    ;
+ *** INPUT TRANSLATOR MESSAGES ***
+
+
+      INFORMATION                                              (ESBPLD.1)       
+      BINARY PARAMETERS PRKIJ (DATA SET 1) FOR MODEL ESPRSTD                    
+      ARE RETRIEVED FROM SDF TABLE.  TABLE NAME = ESPRSTD                       
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (LCLIMS.4)       
+      PARAMETER PC/ELEMENT  1 (DATA SET 1)                                      
+      UPPER BOUND VIOLATED FOR COMPONENT C                                      
+      VALUE =  0.22300E+09, UPPER BOUND =  0.10000E+09                          
+
+  *   WARNING IN PHYSICAL PROPERTY SYSTEM                      (LCLIMS.4)       
+      PARAMETER FREEZEPT/ELEMENT  1 (DATA SET 1)                                
+      UPPER BOUND VIOLATED FOR COMPONENT C                                      
+      VALUE =   4300.0    , UPPER BOUND =   4000.0                              
+ 
+ 
+
+ PDF updated                                                                      TIME =      1.07
+
+ *** CALCULATION TRACE ***
+
+
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   AIR        ----       B1             CACO3      ----       B1      
+   C          ----       B1             4          B1         B2      
+   5          B2         ----           6          B2         ----    
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           C CACO3 AIR                    4                           
+   B2           4                              5 6                         
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      B1 B2 
+
+Calculations begin                                                              time      0.39
+
+
+ SIMULATION CALCULATIONS BEGIN                                                    TIME =      0.39
+
+      ENTHALPY CALCULATION FOR INLET STREAM C OF BLOCK B1                         TIME =      0.43
+      SUBSTREAM CISOLID 
+      KODE =    2 T =  293.150     P =  100000.     Q =  0.00000     HCS = -42089.6    
+
+      ENTHALPY CALCULATION FOR INLET STREAM CACO3 OF BLOCK B1                     TIME =      0.50
+      SUBSTREAM CISOLID 
+      KODE =    2 T =  293.150     P =  100000.     Q =  0.00000     HCS =-1.207778E+09
+
+      ENTHALPY CALCULATION FOR INLET STREAM AIR OF BLOCK B1                       TIME =      0.50
+      SUBSTREAM MIXED   
+      KODE = 2  NTRIAL =   0  T = 298.1500  P =  100000.      V =  1.00000      Q =  0.00000    
+
+      UOS BLOCK B1       MODEL: RSTOIC                                            TIME =      0.51
+      KODE = 2  NTRIAL =   3  T =  1123.15      P =  100000.      V =  1.00000      Q = -6129.05    
+
+      UOS BLOCK B2       MODEL: FLASH2                                            TIME =      0.55
+      KODE = 2  NTRIAL =   3  T =  293.150      P =  100000.      V =  1.00000      Q = -78171.7    
+
+ Report Writer entered                                                            Time =      0.64
+
+ Results generated                                                                Time =      0.71
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ DESIGN-SPEC  CHARL    IS NEW 04/15/2016   18:48:51:54 
+ ;
+ ;Input file created by Aspen Plus Rel. 28.0 at 18:48:51 Fri Apr 15, 2016
+ ;Directory C:\ProgramData\AspenTech\Aspen Plus V8.2  Runid _UNNAMED
+ ;
+ 
+ 
+ 
+ DESIGN-SPEC CHARL
+     DEFINE RDUTY BLOCK-VAR BLOCK=B1 VARIABLE=NET-DUTY  &
+         SENTENCE=RESULTS
+     SPEC "Rduty" TO "0"
+     TOL-SPEC "0.001"
+     VARY STREAM-VAR STREAM=C SUBSTREAM=CISOLID  &
+         VARIABLE=MOLE-FLOW
+     LIMITS "0" "2" STEP-SIZE=0.01
+
+ PDF updated                                                                      TIME =    149.87
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ DESIGN SPEC: CHARL WILL BE INTERPRETED 
+ 
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   AIR        ----       B1             CACO3      ----       B1      
+   C          ----       B1             4          B1         B2      
+   5          B2         ----           6          B2         ----    
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           C CACO3 AIR                    4                           
+   B2           4                              5 6                         
+
+      BLOCK $OLVER01 (METHOD: SECANT  ) HAS BEEN DEFINED TO CONVERGE
+                SPECS : CHARL
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      $OLVER01 B1 
+      (RETURN $OLVER01) 
+      B2 
+
+
+Calculations begin                                                              time    149.99
+
+
+      CONVERGENCE BLOCK $OLVER01  METHOD: SECANT                                  TIME =    149.99
+      ITER   0 For Specs:        CHARL
+
+      CONVERGENCE BLOCK $OLVER01  METHOD: SECANT                                  TIME =    150.00
+      ITER   1 For Specs:        CHARL
+      SPEC   1 ERROR =  -1463.9     OLD X =  0.33333E-03 NEW X =  0.33889E-03
+
+  LOOP $OLVER01 ITER    1:   1 VARS NOT CONVERGED, MAX ERR/TOL    -0.14639E+07    TIME =    150.02
+
+      UOS BLOCK B1       MODEL: RSTOIC                                            TIME =    150.02
+      KODE = 2  NTRIAL =   3  T =  1123.15      P =  100000.      V =  1.00000      Q = -8242.23    
+
+      CONVERGENCE BLOCK $OLVER01  METHOD: SECANT                                  TIME =    150.02
+      ITER   2 For Specs:        CHARL
+      SPEC   1 ERROR =  -1968.6     OLD X =  0.33889E-03 NEW X =  0.31722E-03
+
+  LOOP $OLVER01 ITER    2:   1 VARS NOT CONVERGED, MAX ERR/TOL    -0.19686E+07    TIME =    150.03
+
+      UOS BLOCK B1       MODEL: RSTOIC                                            TIME =    150.03
+      KODE = 2  NTRIAL =   3  T =  1123.15      P =  100000.      V =  1.00000      Q =-9.800204E-05
+
+      CONVERGENCE BLOCK $OLVER01  METHOD: SECANT                                  TIME =    150.03
+      ITER   3 For Specs:        CHARL
+      SPEC   1 ERROR = -0.23407E-04                          X =  0.31722E-03
+
+  LOOP $OLVER01 ITER    3:     *** CONVERGED *** , MAX ERR/TOL    -0.23407E-01    TIME =    150.03
+
+      UOS BLOCK B2       MODEL: FLASH2                                            TIME =    150.03
+      KODE = 2  NTRIAL =   3  T =  293.150      P =  100000.      V =  1.00000      Q = -77959.7    
+
+ Report Writer entered                                                            Time =    150.04
+
+ Results generated                                                                Time =    150.06
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO DESIGN-SPEC  CHARL    04/15/2016   18:49:19:29 
+ ;
+ ;Input file created by Aspen Plus Rel. 28.0 at 18:49:19 Fri Apr 15, 2016
+ ;Directory C:\ProgramData\AspenTech\Aspen Plus V8.2  Runid _UNNAMED
+ ;
+ 
+ 
+ 
+ DESIGN-SPEC CHARL
+     DEFINE RDUTY BLOCK-VAR BLOCK=B1 VARIABLE=NET-DUTY  &
+         SENTENCE=RESULTS
+     SPEC "Rduty" TO "0"
+     TOL-SPEC "0.001"
+     VARY STREAM-VAR STREAM=C SUBSTREAM=CISOLID  &
+         VARIABLE=MOLE-FLOW
+     LIMITS "0" "2" STEP-SIZE=0.1
+
+ PDF updated                                                                      TIME =    177.57
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ DESIGN SPEC: CHARL WILL BE INTERPRETED 
+ 
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+ CONVERGENCE BLOCK $OLVER01 FOR DESIGN SPEC CHARL    IS DELETED
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   AIR        ----       B1             CACO3      ----       B1      
+   C          ----       B1             4          B1         B2      
+   5          B2         ----           6          B2         ----    
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           C CACO3 AIR                    4                           
+   B2           4                              5 6                         
+
+      BLOCK $OLVER02 (METHOD: SECANT  ) HAS BEEN DEFINED TO CONVERGE
+                SPECS : CHARL
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      $OLVER02 B1 
+      (RETURN $OLVER02) 
+      B2 
+
+
+Calculations begin                                                              time    177.59
+
+
+      CONVERGENCE BLOCK $OLVER02  METHOD: SECANT                                  TIME =    177.59
+      ITER   0 For Specs:        CHARL
+
+      CONVERGENCE BLOCK $OLVER02  METHOD: SECANT                                  TIME =    177.59
+      ITER   1 For Specs:        CHARL
+      SPEC   1 ERROR = -0.23407E-04                          X =  0.31722E-03
+
+  LOOP $OLVER02 ITER    1:     *** CONVERGED *** , MAX ERR/TOL    -0.23407E-01    TIME =    177.59
+
+ Report Writer entered                                                            Time =    177.60
+
+ Results generated                                                                Time =    177.61
+
+
+*** INPUT SPECIFICATION MESSAGES ***
+
+ CHANGES WERE MADE TO DESIGN-SPEC  CHARL    04/15/2016   18:50:02:08 
+ ;
+ ;Input file created by Aspen Plus Rel. 28.0 at 18:50:02 Fri Apr 15, 2016
+ ;Directory C:\ProgramData\AspenTech\Aspen Plus V8.2  Runid _UNNAMED
+ ;
+ 
+ 
+ 
+ DESIGN-SPEC CHARL
+     DEFINE RDUTY BLOCK-VAR BLOCK=B1 VARIABLE=NET-DUTY  &
+         SENTENCE=RESULTS
+     SPEC "Rduty" TO "0"
+     TOL-SPEC "0.0005"
+     VARY STREAM-VAR STREAM=C SUBSTREAM=CISOLID  &
+         VARIABLE=MOLE-FLOW
+     LIMITS "0" "2" STEP-SIZE=0.001
+
+ PDF updated                                                                      TIME =    220.35
+ THIS COPY OF ASPEN PLUS LICENSED TO                                 
+ 
+ DESIGN SPEC: CHARL WILL BE INTERPRETED 
+ 
+ *** FLOWSHEET ANALYSIS MESSAGES ***
+ CONVERGENCE BLOCK $OLVER02 FOR DESIGN SPEC CHARL    IS DELETED
+
+ FLOWSHEET CONNECTIVITY BY STREAMS       
+
+   STREAM     SOURCE     DEST           STREAM     SOURCE     DEST
+   AIR        ----       B1             CACO3      ----       B1      
+   C          ----       B1             4          B1         B2      
+   5          B2         ----           6          B2         ----    
+
+ FLOWSHEET CONNECTIVITY BY BLOCKS        
+
+   BLOCK        INLETS                         OUTLETS
+   B1           C CACO3 AIR                    4                           
+   B2           4                              5 6                         
+
+      BLOCK $OLVER03 (METHOD: SECANT  ) HAS BEEN DEFINED TO CONVERGE
+                SPECS : CHARL
+
+      COMPUTATION ORDER FOR THE FLOWSHEET IS:
+      $OLVER03 B1 
+      (RETURN $OLVER03) 
+      B2 
+
+
+Calculations begin                                                              time    220.38
+
+
+      CONVERGENCE BLOCK $OLVER03  METHOD: SECANT                                  TIME =    220.38
+      ITER   0 For Specs:        CHARL
+
+      CONVERGENCE BLOCK $OLVER03  METHOD: SECANT                                  TIME =    220.38
+      ITER   1 For Specs:        CHARL
+      SPEC   1 ERROR = -0.23407E-04                          X =  0.31722E-03
+
+  LOOP $OLVER03 ITER    1:     *** CONVERGED *** , MAX ERR/TOL    -0.46815E-01    TIME =    220.38
+
+ Report Writer entered                                                            Time =    220.39
+
+ Results generated                                                                Time =    220.40
+
+RUN SAVED
+
+
+
+ NO ERRORS OR WARNINGS GENERATED

@@ -1,0 +1,9 @@
+INPUT: solid_reactors.inm
+MODNAME: apmain
+RUNID: solid_reactors
+NEW_RUNID: solid_reactors
+OLD_RUNID: solid_reactors
+PDF: solid_reactors.appdf
+USERNAME: StudyCentre
+XMOD: C:\Program Files (x86)\AspenTech\Aspen Plus V8.2\Engine\xeq\apmain
+SPONLY:
